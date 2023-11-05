@@ -13,3 +13,7 @@ print("2-- ",chen.split(),end="\n\n")
 # 3. Nan yon chenn karaktè, mete tout premye lèt chak mo an majiskil.
 chen="jean duckens sannon"
 print("3-- ",chen.title(),end="\n\n")
+
+#4 Nan yon chenn karaktè, rekipere premye lèt chak mo. Epi afiche yon nouvo chenn ak tout inisyal sa yo. Ekzanp: "Ayibobo Ayiti"  => "AA"
+chen="Ayibobo Ayiti"
+print("4-- ",chen[0]+chen[7],end="\n\n")
