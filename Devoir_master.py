@@ -1,6 +1,7 @@
 '''
     MASTER STR (index, split, replace, lower, upper, title)
 '''
+print("\tMASTER STR (index, split, replace, lower, upper, title)\n")
 # 1. Nan yon chenn karaktè, mete tout karaktè yo an miniskil.
 chen="Jean Duckens SANNON"
 print("1-- ",chen.lower(),end="\n\n")
@@ -61,3 +62,98 @@ print("9-- ",a,end="\n\n")
 chen="Ayiti kapab avanse"
 chen=chen.replace(" ", "")
 print("10-- ",chen,end="\n\n")
+
+'''
+    MASTER LIST (Union & Intersection & Lis comprehension)
+'''
+print("\tMASTER LIST (Union & Intersection & Lis comprehension)\n")
+
+#1 Kreye yon lis eleman ki divizib pa 2, nan entèval [0-n] enklizif
+n=20
+lis=[]
+for i in range(n+1):
+    if i%2==0:
+        lis.append(i)
+print("1-- ",lis,end="\n\n")
+
+#2 Ou gen yon lis antye, konvèti l an yon lis chenn.
+lis=[1,2,3,4,5,6,7,8,9]
+for i in range(len(lis)):
+    lis[i]=str(lis[i])
+print("2-- ",lis,end="\n\n")
+
+#3 Ou gen yon lis chenn ki an miniskil, konvèti an yon lis chenn majiskil
+lis=["jean","duckens","sannon"]
+for i in range(len(lis)):
+    lis[i]=lis[i].upper()
+print("3-- ",lis,end="\n\n")
+
+#4 Ou gen yon lis, kreye yon nouvo lis ki fèt ak eleman ki nan endèks ki divizib pa 3 yo sèlman
+lis=[1,2,3,4,5,6,7,8,9]
+lis2=[]
+for i in range(len(lis)):
+    if i%3==0:
+        lis2.append(lis[i])
+print("4-- ",lis2,end="\n\n")
+
+#5 Ou gen lis eleman, kreye yon nouvo lis ki gen chak 3 eleman yo gwoupe anndan yon tipl. Ekzanp: [1,2,3,4,5,6,7,8,9] => [(1,2,3), (4,5,6), (7,8,9)]
+lis=[1,2,3,4,5,6,7,8,9]
+lis2=[]
+for i in range(0,len(lis),3):
+    lis2.append((lis[i],lis[i+1],lis[i+2]))
+print("5-- ",lis2,end="\n\n")
+
+#6 Ou gen yon lis, ki gen yon pakèt eleman ki repete. Konvèti l an yon lis, ki pa gen okenn doublon.
+lis=[1,2,3,4,5,6,7,8,9,1,2,3,4,5,6]
+lis2=[]
+for i in lis:
+    if i not in lis2:
+        lis2.append(i)
+print("6-- ",lis2,end="\n\n")
+
+#7 Ou gen 2 lis. Kreye yon nouvo lis, ki genyen sèlman eleman komen ant 2 lis yo.
+lis1=[1,2,3,4,5,6,7,8,9]
+lis2=[2,4,9,10,11,12,13,14,15]
+lis3=[]
+for i in lis1:
+    if i in lis2:
+        lis3.append(i)
+print("7-- ",lis3,end="\n\n")
+
+#8 Ou gen 2 lis. Kreye yon nouvo lis, ki genyen sèlman eleman distenge ant 2 lis yo.
+list1=[1,2,3,4,5,6,7,8,9]
+list2=[2,4,9,10,11,12,13,14,15]
+list3=[]
+for i in list1:
+    if i not in list2:
+        list3.append(i) 
+for i in list2:
+    if i not in list1:
+        list3.append(i) 
+print("8-- ",list3,end="\n\n")
+
+#9 Ou gen yon diksyonè. Kreye yon nouvo lis ak kle yo sèlman, epi yon lòt ak valè yo sèlman.
+dic={"nom":"SANNON","prenom":"Jean Duckens","age":25,"sexe":"Masculin"}
+lis1=[]
+lis2=[]
+for i in dic:
+    lis1.append(i)
+    lis2.append(dic[i])
+print("9-- ",lis1)
+print("    ",lis2,end="\n\n")
+
+#10 Reyini 3 lis ansanm, san okenn doublon.
+list1=[1,2,3,4,5,6,7,8,9]
+list2=[2,4,9,10,11,12,13,14,15]
+list3=[1,2,3,4,5,6,7,8,9]
+list4=[]
+for i in list1:
+    if i not in list4:
+        list4.append(i)
+for i in list2:
+    if i not in list4:
+        list4.append(i)
+for i in list3:
+    if i not in list4:
+        list4.append(i)
+print("10-- ",list4,end="\n\n")
