@@ -157,3 +157,47 @@ for i in list3:
     if i not in list4:
         list4.append(i)
 print("10-- ",list4,end="\n\n")
+
+
+'''
+    MASTER DICTIONNAIRE (isinstance, eval)
+'''
+print("\tMASTER DICTIONNAIRE (isinstance, eval)\n")
+
+#1 Ou gen yon diksyonè. Rekipere tout valè yo, gras ak kle yo epi retounen yon lis valè.
+dic={"nom":"SANNON","prenom":"Jean Duckens","age":25,"sexe":"Masculin"}
+lis=[]
+for i in dic:
+    lis.append(dic[i])
+print("1-- ",lis,end="\n\n")
+
+#2 Mande itilizatè a, tape yon valè... epi verifye si l gen akolad devan ak dèyè.
+user=input("2-- Tape yon valè: ")
+
+if user.startswith("{") and user.endswith("}"):
+    print("Ou gen akolad devan ak dèyè")
+else:
+    print("Ou pa gen akolad devan ak dèyè")
+print("\n")
+
+#3 Pakouri yon diksyonè, epi afiche tout kle yo.
+dic={"nom":"SANNON","prenom":"Jean Duckens","age":25,"sexe":"Masculin"}
+print("3-- ",dic.keys(),end="\n\n")
+
+#4 Pakouri yon diksyonè, epi afiche tout valè yo.
+dic={"nom":"SANNON","prenom":"Jean Duckens","age":25,"sexe":"Masculin"}
+print("4-- ",dic.values(),end="\n\n")
+
+#5 Pakouri yon diksyonè, pou w kapab kreye yon kopi(nouvo) sou disksyonè sa.
+dic={"nom":"SANNON","prenom":"Jean Duckens","age":25,"sexe":"Masculin"}
+dic2={}
+for i in dic:
+    dic2[i]=dic[i]
+print("5-- ",dic2,end="\n\n")
+
+#6 Anndan yon diksyonè ki gen kle ak valè(valè yo ka nenpòt tip done). Ajoute yon underscore devan ak dèyè tout valè ki se chenn yo. Ekzanp: {"name": "Lub", "age": 14, "assets": ["laptop", "phone"]} -> {"name": "_Lub_", "age": 14, "assets": ["laptop", "phone"]}
+dic={"nom":"SANNON","prenom":"Jean Duckens","age":25,"sexe":"Masculin"}
+for i in dic:
+    if isinstance(dic[i],str):
+        dic[i]="_"+dic[i]+"_"
+print("6-- ",dic,end="\n\n")
