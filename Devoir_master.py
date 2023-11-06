@@ -33,7 +33,7 @@ for i in chen:
         print(i,end="")
 print("\n")
 
-#6 Mete yon chenn karaktè devan dèyè, answit mete l an majiskil. Ekzanp: "Ayiti"  => "ITIYA"
+#6 Mete yon chnn kareaktè devan dèyè, answit mete l an majiskil. Ekzanp: "Ayiti"  => "ITIYA"
 chen="Ayiti"
 chen=chen[::-1]
 print("6-- ",chen.upper(),end="\n\n")
@@ -69,7 +69,7 @@ print("10-- ",chen,end="\n\n")
 print("\tMASTER LIST (Union & Intersection & Lis comprehension)\n")
 
 #1 Kreye yon lis eleman ki divizib pa 2, nan entèval [0-n] enklizif
-n=20
+n=10
 lis=[]
 for i in range(n+1):
     if i%2==0:
@@ -201,3 +201,36 @@ for i in dic:
     if isinstance(dic[i],str):
         dic[i]="_"+dic[i]+"_"
 print("6-- ",dic,end="\n\n")
+
+#7 Nan yon diksyonè ki gen valè ki se chenn sèlman. Kreye yon nouvo diksyonè ki gen tout eleman ki gen valè ki dijit yo sèlman. Ekzanp: {"a": "12", "b": "abc", "c": "12r", "d":"90"} ->{"a": "12", "d":"90"}
+dic={"a": "12", "b": "abc", "c": "12r", "d":"90"}
+dic2={}
+for i in dic:
+    if dic[i].isdigit():
+        dic2[i]=dic[i]
+print("7-- ",dic2,end="\n\n")
+
+#8 Pakouri yon disksyonè, pou w mete l sou fòm lis, kote chak eleman nan disksyonè sa, vin sou fòm tipl(kle, valè) anndan lis la. Ekzanp: {"a":1, "b": 2} ->[("a",1), ("b",2)]
+dic={"a":1, "b": 2}
+lis=[]
+for i in dic:
+    lis.append((i,dic[i]))
+print("8-- ",lis,end="\n\n")
+
+#9 Pakouri yon lis tipl, pou w mete l sou fòm diksyonè. Ekzanp: [("a",1), ("b",2)] -> {"a":1, "b": 2}
+lis=[("a",1), ("b",2)]
+dic={}
+for i in lis:
+    dic[i[0]]=i[1]
+print("9-- ",dic,end="\n\n")
+
+#10 Kole 2 diksyonè ansanm pou fè youn, kote si gen eleman ki gen menm kle ap konkatene valè, swivan kondisyon sa yo: - Antye: ADISYON -Chenn, lis, set: KONKATENASYON Rès eleman ki pa gen valè ki gen tip sa yo, pap nan nouvo diksyonè a.
+dic1={"nom":"SANNON","prenom":"Jean Duckens","age":25,"sexe":"Masculin"}
+dic2={"nom":"SANNON","prenom":"Jean Duckens","age":25,"sexe":"Masculin"}
+dic3={}
+for i in dic1:
+    if type(dic1[i])==int:
+        dic3[i]=dic1[i]+dic2[i]
+    elif type(dic1[i])==str or type(dic1[i])==list or type(dic1[i])==set:
+        dic3[i]=dic1[i]+dic2[i]
+print("10-- ",dic3,end="\n\n")
