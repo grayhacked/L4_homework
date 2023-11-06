@@ -234,3 +234,74 @@ for i in dic1:
     elif type(dic1[i])==str or type(dic1[i])==list or type(dic1[i])==set:
         dic3[i]=dic1[i]+dic2[i]
 print("10-- ",dic3,end="\n\n")
+
+'''
+    MASTER FUNCTION CONCEPT
+'''
+
+print("\tMASTER FUNCTION CONCEPT\n")
+
+#1 kreye yon fonksyon ki ap pran yon paramèt yon mo, epi li retounen envès la.
+def env(mo):
+    return mo[::-1]
+print("1-- ",env("Ayiti kapab avanse"),end="\n\n")
+
+#2 kreye yon fonksyon ki pou jenere yon kòd aleyatwa ki gen n karaktè alfabetik.
+def kod(n):
+    import random
+    import string
+    return "".join(random.choices(string.ascii_letters,k=n))
+print("2-- ",kod(5),end="\n\n")
+
+#3 kreye yon fonksyon ki pou jenere yon kòd aleyatwa ki gen n karaktè alfabetik, san repetisyon.
+def kod(n):
+    import random
+    import string
+    return "".join(random.sample(string.ascii_letters,k=n))
+print("3-- ",kod(5),end="\n\n")
+
+#4 kreye yon fonksyon ki pou jenere yon kòd aleyatwa ki gen n karaktè alafanimerik, san repetisyon.
+def kod(n):
+    import random
+    import string
+    return "".join(random.sample(string.ascii_letters+string.digits,k=n))
+print("4-- ",kod(5),end="\n\n")
+
+#5 Ou gen yon lis chenn. Jenere yon SLUG apati chenn nan. Nan yon SLUG, tout karaktè ki akseptab yo se: alfanimerik ak "-"
+def slug(chenn):
+    import re
+    return re.sub(r"\W+","-",chenn)
+print("5-- ",slug("Ayiti kapab avanse"),end="\n\n")
+
+#6 Kreye yon fonksyon ki ap separe chak lèt nan yon mo ak yon vigil
+def separe(mo,symbol_vigil):
+    return symbol_vigil.join(mo)
+print("6-- ",separe("Ayiti kapab avanse",","),end="\n\n")
+
+#7 Kreye yon fonksyon ki ap kripte yon mo, avèk endèks li nan alfabè a. Chak karaktè dwe separe ak yon tirè. ekzanp: "ALO" -> "0-11-14"
+def kripte(mo):
+    import string
+    lis=[]
+    for i in mo:
+        lis.append(string.ascii_lowercase.index(i))
+    return "-".join(str(i) for i in lis)
+print("7-- ",kripte("alo"),end="\n\n")
+
+#8 Kreye yon fonksyon ki ap dekripte yon mo ki fèt ak endèks chak lèt nan alfabè a, separe ak yon tirè. ekzanp: "0-11-14" -> "ALO"
+def dekripte(mo):
+    import string
+    lis=mo.split("-")
+    return "".join(string.ascii_lowercase[int(i)] for i in lis)
+print("8-- ",dekripte("0-11-14"),end="\n\n")
+
+#9 Kreye yon fonksyon ki ap pran 2 paramèt, epi ki pèmite valè yo. Answit li retounen tou 2 valè yo sou fòm Tuple.
+def permut(a,b):
+    return (b,a)
+print("9-- ",permut(2,3),end="\n\n")
+
+#10 Kreye yon fonksyon ki ap pran yon non an paramèt, epi ki retounen inisyal yo. Atansyon ak non konpoze ak tirè yo. ekzanp: "Jean-Baptiste Jean" -> "JBJ"
+def inisyal(nom):
+    import re
+    lis=re.split(r"\W+",nom)
+    return "".join(i[0] for i in lis)
+print("10-- ",inisyal("Jean-Baptiste Jean"),end="\n\n")
